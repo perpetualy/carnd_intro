@@ -150,7 +150,10 @@ bool test_initialize() {
 
 bool test_move() {
 	vector < vector <float> > in, out, correct;
-	in = zeros(3,3);
+	in.resize(3);
+	for (int i =0; i < 3; ++i){
+		in[i].resize(3);
+	}
 	in[2][2] = 1.0;
 
 	int dx, dy;
@@ -158,7 +161,10 @@ bool test_move() {
 	dy = 1;
 	float blurring = 0.0;
 
-	correct = zeros(3,3);
+	correct.resize(3);
+	for (int i =0; i < 3; ++i){
+		correct[i].resize(3);
+	}
 	correct[0][0] = 1.0;
 
 	out = move(dy, dx, in, blurring);
